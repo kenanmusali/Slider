@@ -1,0 +1,230 @@
+.SliderGroup {
+    height: 50vh;
+    display: flex;
+    position: relative;
+}
+
+.SliderItem {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 75%;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    z-index: 2;
+}
+
+.SgAfter {
+    z-index: 1;
+    left: 14%;
+    /* opacity: 0.5; */
+    height: 96%;
+}
+
+.SgLast {
+    z-index: 0;
+    right: 0;
+    left: auto;
+
+    opacity: 0.5;
+    height: 92%;
+}
+
+
+.SliderButton {
+    z-index: 4;
+    height: 3rem;
+    bottom: 0;
+}
+
+
+
+.swing-animation {
+    animation: swing 3s ease 1;
+    -webkit-animation: swing 3s ease 1;
+    filter: drop-shadow(300px 0px 50px rgba(255, 255, 255, 0.356));
+    -webkit-filter: drop-shadow(300px 0px 50px rgba(255, 255, 255, 0.356));
+}
+
+.swing-animation1 {
+    animation: swing1 2s ease 1;
+    
+    -webkit-animation: swing1 2s ease 1;
+}
+
+.swing-animation2 {
+    animation: swing2 2s ease 1;
+    -webkit-animation: swing2 2s ease 1;
+}
+
+
+
+
+@keyframes swing {
+    0% {
+        transform: translateX(20%) scale(1.05);
+        -webkit-transform: translateX(20%) scale(1.05);
+        -moz-transform: translateX(20%) scale(1.05);
+        -ms-transform: translateX(20%) scale(1.05);
+        -o-transform: translateX(20%) scale(1.05);
+    }
+
+    33% {
+        transform: translateX(-1%);
+        -webkit-transform: translateX(-1%);
+        -moz-transform: translateX(-1%);
+        -ms-transform: translateX(-1%);
+        -o-transform: translateX(-1%);
+    }
+
+
+
+    66% {
+        transform: translateX(0.1%);
+        -webkit-transform: translateX(0.1%);
+        -moz-transform: translateX(0.1%);
+        -ms-transform: translateX(0.1%);
+        -o-transform: translateX(0.1%);
+    }
+
+    100% {
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+    }
+}
+
+@keyframes swing1 {
+    0% {
+        transform: translateX(-3%) scale(1.01);
+        -webkit-transform: translateX(-3%) scale(1.01);
+        -moz-transform: translateX(-3%) scale(1.01);
+        -ms-transform: translateX(-3%) scale(1.01);
+        -o-transform: translateX(-3%) scale(1.01);
+}
+
+
+
+    100% {
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+    }
+}
+
+
+@keyframes swing2 {
+    0% {
+        transform: translateX(-25%) scale(1.05);
+        -webkit-transform: translateX(-25%) scale(1.05);
+        -moz-transform: translateX(-25%) scale(1.05);
+        -ms-transform: translateX(-25%) scale(1.05);
+        -o-transform: translateX(-25%) scale(1.05);
+}
+
+    33% {
+        transform: translateX(1%);
+        -webkit-transform: translateX(1%);
+        -moz-transform: translateX(1%);
+        -ms-transform: translateX(1%);
+        -o-transform: translateX(1%);
+}
+
+
+
+    66% {
+        transform: translateX(-0.1%);
+        -webkit-transform: translateX(-0.1%);
+        -moz-transform: translateX(-0.1%);
+        -ms-transform: translateX(-0.1%);
+        -o-transform: translateX(-0.1%);
+}
+
+    100% {
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        -o-transform: translateX(0%);
+    }
+}
+
+/* .ProgressBar {
+    width: 100%;
+    height: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .ProgressBarFill {
+    width: 0;
+    height: 100%;
+    background-color: #3498db;
+    animation: fillProgress 7s linear infinite;
+    -webkit-animation: fillProgress 7s linear forwards;
+}
+  
+  @keyframes fillProgress {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  } */
+  .CircularProgress {
+    width: 2rem; /* Container width */
+    height: 2rem; /* Container height */
+    position: relative;
+  }
+  
+  .CircularProgress svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Start from the top */
+  }
+  
+  .CircularProgress circle {
+    fill: none;
+    stroke-width: 20; /* Increased stroke width */
+    stroke: #f3f3f3; /* Light grey background stroke */
+    r: calc(50% - 10px); /* Adjust radius to account for stroke width */
+  }
+  
+  .CircularProgress .progress {
+    stroke: #2030c2; /* Blue progress stroke */
+    stroke-dasharray: 283; /* Circumference of the circle (2 * π * r) */
+    stroke-dashoffset: 283; /* Start with no progress */
+    stroke-linecap: round; /* Rounded stroke ends */
+    animation: fillStroke 7s linear infinite;
+  }
+  
+  @keyframes fillStroke {
+    0% {
+      stroke-dashoffset: 283; /* Full circle (no progress) */
+    }
+    100% {
+      stroke-dashoffset: 0; /* Fully filled circle */
+    }
+  }
+
+  @keyframes fillStroke {
+    0% {
+      stroke-dashoffset: 283; /* Full circle (no progress) */
+    }
+    100% {
+      stroke-dashoffset: 0; /* Fully filled circle */
+    }
+  }
